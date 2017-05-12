@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Май 12 2017 г., 05:15
+-- Время создания: Май 13 2017 г., 00:23
 -- Версия сервера: 10.1.21-MariaDB
 -- Версия PHP: 5.6.30
 
@@ -33,20 +33,27 @@ CREATE TABLE `articles` (
   `date` date NOT NULL,
   `category` int(11) NOT NULL,
   `likes` int(11) NOT NULL,
-  `image` varchar(150) NOT NULL
+  `image` varchar(150) NOT NULL,
+  `prosmotry` int(11) NOT NULL,
+  `buy` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Дамп данных таблицы `articles`
 --
 
-INSERT INTO `articles` (`id`, `title`, `content`, `date`, `category`, `likes`, `image`) VALUES
-(1, 'Первая статья', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2016-05-30', 4, 4, 'img/2.jpg'),
-(2, 'Вторая статья', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?', '2016-05-30', 2, 0, 'img/3.PNG'),
-(3, 'Третья статья', 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?', '2016-05-30', 2, 0, 'img/3.PNG'),
-(4, 'Четвертая статья', 'Привет, я четвертая статья и меня создали при помощи web интерфейса, написанного на php с помощью серии бесплатных видеоуроков по этому языку от GeekBrains..! (Урок 11)<br>\r\nТак же меня отредактировали с помощью этого интерфейса! (Урок 12)<?=$article[\'date\']?>', '2016-06-14', 2, 0, 'img/3.PNG'),
-(13, 'asdf', 'sdfa', '5235-03-04', 2, 0, 'img/3.PNG'),
-(14, 'asdf', 'sdfa', '5235-03-04', 1, 1, 'img/1.jpg');
+INSERT INTO `articles` (`id`, `title`, `content`, `date`, `category`, `likes`, `image`, `prosmotry`, `buy`) VALUES
+(1, 'Сергей', 'Большой стаж -20 лет .гарантия-качества выполненных работ.хорошие скидки. \r\nУслуги сантехника быстро качественно недорого. \r\n\r\n-Устранение засоров.течи\r\n-.Установка батарей\r\n-.Вода,счётчика\r\n.-Смесителей \r\n.-Теплых полов.\r\n-Насосных станций\r\n-.Бойлеров отопления \r\n-Отопление в домах\r\n.-Септики\r\n.-Фильтра \r\n- Производим все виды сантехнических работ.Также,сварные работы любой сложности.Большой стаж.\r\n-Также опрессовка систем отопления.\r\n\r\n-Вызов бесплатный\r\n-Покупку материалов берем на себя.\r\n-Цены приемлемые. -На комплексные работы хорошая скидка.', '2016-05-30', 3, 2, 'img/21.jpg', 5, 1),
+(3, 'Александр', 'Профессионально,качественно и в короткие сроки.Все виды работ,от установки смесителя до сборки душевых кабин,замена ванн,моек,унитазов,ремонт сливных бочков,смесителей,замена кранбукс и картриджей,установка тропического душа,монтаж инсталяции,замена труб,полипропилен и т. д.,устранение засоров,протечек,отопление,котлы,тёплые полы.Монтаж счётчиков учёта воды,предохнанители от затопа и протечки.Установка фильтров.Замена батарей на радиаторы.', '2016-05-30', 3, 0, 'img/23.JPG', 0, 0),
+(4, 'Юлия', 'Предлагаю услуги няни у себя на дому(метро Озерки).О себе- 45 лет,есть взрослая дочь,опыт няни более 7-ми лет c детьми от 6 месяцев.Ищу работу на полную занятость,рассмотрю любые графики.Обеспечу заботу и внимание вашему малышу,поиграем,порисуем,уложу спать(если нужен дневной сон),при хорошей погоде погуляем,кв. просторная.На постоянной основе дети с 1,5 до 2,5 -80 р в час, дети с 2,5 и старше-70р в час.Так же оказываю услуги экстренной няни(100р в час).', '2016-06-14', 2, 3, 'img/14.JPG', 8, 3),
+(13, 'Кристина', 'Предлагаю помощь современным мамам!!!\r\nБазовые принципы :\r\n- на дому у няни \r\nВремя нахождения ребенка:\r\n- будние дни: с 7-00 до 23 часов \r\n- выходные дни: время неограниченно \r\n- с 21 часа возможна доставка на дом \r\n- возможно суточное или ночное пребывание ребенка\r\n- питание: оговаривается отдельно \r\n- район: Красногвардейский, Невский \r\n- адрес: Спб, пр. Косыгина дом 11/2 \r\n- автомобиль: Сузуки Гранд Витара, 2013 г.в., оснащено детским креслом \r\n- телефон: 8-921-400-75-05 Ольга', '2017-03-04', 2, 1, 'img/13.JPG', 2, 0),
+(14, 'Татьяна', 'Вы ищите специалиста который ВАМ приберет ваш дом, квартиру, коттедж или просто помет ваши окна? Мой опыт и знания в этой области дают мне право утверждать, что я справлюсь с поставленной задачей! \r\n• Уборка квартир любой площади • Уборка домов и коттеджей • Уборка после ремонта или завершения строительства • Профессиональная уборка офисов любой площади • Уборка помещений любого типа \r\nВСЯ ХИМИЯ протестирована не однократно!! 89545545366', '2017-04-12', 1, 0, 'img/11.JPG', 0, 0),
+(15, 'Оксана', 'Выполню быстро и качественно уборку вашей квартиры. Профессионал своего дела с опытом работы! На уборку приеду со своим инвентарем, моющими средствами (Германия, Финляндия). Используются только экологичные и эффективные моющие средства. 89564878878', '2017-05-13', 1, 3, 'img/15.jpg', 4, 1),
+(16, 'Анастасия', 'Интересует подработка в качестве няни, а также ЭКСТРЕННОЙ няни! Образование (СПбГУ, конфликтолог). С удовольствием уделю время и внимание ребенку! Рассмотрю различные районы города! График работы обсуждается! Тел. 8-967-974-29-70.', '2017-04-04', 2, 2, 'img/12.jpg', 4, 1),
+(17, 'Милана', 'Жизнь не всегда складывается легко, но чистота в доме точно может быть простой. Доверьте уборку профессиональному клинеру Милане, и получите сияющую чистоту в доме, не напрягая спину. Опыт работы более 5 лет. Цена договорная. 89536545454', '0043-03-04', 1, 0, 'img/16.jpg', 0, 0),
+(18, 'Роман', 'Электромонтажные работы от А до Я.Срочный выезд специалиста.\r\nПрофессионально. Надежно. По адекватным ценам.', '5455-04-25', 4, 15, 'img/17.jpg', 16, 0),
+(19, 'Николай', 'квалифицированный специалист.\r\n- высшее профильное образование, стаж работы по специальности 12 лет (инженер электрик).\r\n- имею богатый опыт выполнения комплекса электромонтажных работ \"под ключ\" на объектах различного назначения : квартиры, коттеджи, офисы, дома, а так же объекты \r\nкоммерческой недвижимости.\r\nуслуги электромонтажных работ', '2017-06-21', 4, 0, 'img/19.jpg', 0, 0),
+(20, 'Юрий', 'квалифицированный специалист.\r\n- высшее профильное образование, стаж работы по специальности 12 лет (инженер электрик).\r\n- имею богатый опыт выполнения комплекса электромонтажных работ \"под ключ\" на объектах различного назначения : квартиры, коттеджи, офисы, дома, а так же объекты \r\nкоммерческой недвижимости.\r\nуслуги электромонтажных работ', '2017-04-02', 4, 0, 'img/18.jpg', 0, 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -66,7 +73,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT для таблицы `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
